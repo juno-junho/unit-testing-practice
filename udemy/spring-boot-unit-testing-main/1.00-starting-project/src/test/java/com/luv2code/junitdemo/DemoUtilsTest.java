@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 //@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -18,8 +19,10 @@ class DemoUtilsTest {
         System.out.println("@BeforeEach executes before the execution of each test method");
     }
 
+
     @Test
     @DisplayName("Equals and Not Equals")
+    @Order(1)
     void test_Equals_And_NotEquals() {
 
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -30,6 +33,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Null and Not Null")
+    @Order(0)
     void testNullAndNotNull() {
         System.out.println("Running test: testNullAndNotNull");
 
@@ -50,6 +54,7 @@ class DemoUtilsTest {
 
     @DisplayName("True and False")
     @Test
+    @Order(30)
     void testTrueFalse() {
         int gradeOne = 10;
         int gradeTwo = 5;
@@ -77,6 +82,7 @@ class DemoUtilsTest {
 
     @DisplayName("Lines match")
     @Test
+    @Order(50)
     void testLinesMatch() {
         // assertIterableEquals랑 다른 점은 예상 줄이 실제 줄과 같은지를 확인. 같으면 다음 쌍으로 이동.
         List<String> theList = List.of("luv", "2", "code");
@@ -88,16 +94,22 @@ class DemoUtilsTest {
     @Test
     void testThrowsAndDoesNotThrow() {
         assertThrows(Exception.class, () -> demoUtils.throwException(-1), "Should throw exception");
-        assertThrows(Exception.class, () -> {demoUtils.throwException(-1);}, "Should throw exception");
+        assertThrows(Exception.class, () -> {
+            demoUtils.throwException(-1);
+        }, "Should throw exception");
 
         assertDoesNotThrow(() -> demoUtils.throwException(5), "Should not throw exception");
-        assertDoesNotThrow(() -> {demoUtils.throwException(5);}, "Should not throw exception");
+        assertDoesNotThrow(() -> {
+            demoUtils.throwException(5);
+        }, "Should not throw exception");
     }
 
     @DisplayName("Timeout")
     @Test
     void testTimeout() {
-        assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {demoUtils.checkTimeout();}, "Message should execute in 3 seconds");
+        assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {
+            demoUtils.checkTimeout();
+        }, "Message should execute in 3 seconds");
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> demoUtils.checkTimeout(), "Message should execute in 3 seconds");
     }
 
