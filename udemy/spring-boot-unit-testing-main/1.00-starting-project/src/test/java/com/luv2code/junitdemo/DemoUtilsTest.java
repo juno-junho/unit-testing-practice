@@ -7,8 +7,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
+@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@DisplayName("A special test case")
 class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -21,7 +22,7 @@ class DemoUtilsTest {
 
 
     @Test
-    @DisplayName("Equals and Not Equals")
+//    @DisplayName("Equals and Not Equals")
     @Order(1)
     void test_Equals_And_NotEquals() {
 
@@ -32,7 +33,7 @@ class DemoUtilsTest {
     }
 
     @Test
-    @DisplayName("Null and Not Null")
+//    @DisplayName("Null and Not Null")
     @Order(0)
     void testNullAndNotNull() {
         System.out.println("Running test: testNullAndNotNull");
@@ -44,7 +45,7 @@ class DemoUtilsTest {
         assertNotNull(demoUtils.checkNull(str2), "Object should not be null");
     }
 
-    @DisplayName("Same and Not Same")
+//    @DisplayName("Same and Not Same")
     @Test
     void testSameAndNotSame() {
         String str = "luv2code";
@@ -84,7 +85,7 @@ class DemoUtilsTest {
     @Test
     @Order(50)
     void testLinesMatch() {
-        // assertIterableEquals랑 다른 점은 예상 줄이 실제 줄과 같은지를 확인. 같으면 다음 쌍으로 이동.
+        // assertIterableEquals 다른 점은 예상 줄이 실제 줄과 같은지를 확인. 같으면 다음 쌍으로 이동.
         List<String> theList = List.of("luv", "2", "code");
 
         assertLinesMatch(theList, demoUtils.getAcademyInList(), "Lines should match");
