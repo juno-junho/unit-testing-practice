@@ -1,9 +1,8 @@
 package chapter3;
 
 import org.assertj.core.data.Percentage;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.assertj.core.internal.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -63,6 +62,7 @@ public class AssertTest {
         assertTrue(account.hasPositiveBalance());
     }
 
+//    @IgnoreForBinding
     @Test
     public void depositIncreasesBalance() {
         int initialBalance = account.getBalance();
