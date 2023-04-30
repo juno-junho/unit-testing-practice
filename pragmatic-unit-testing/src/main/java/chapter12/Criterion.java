@@ -1,8 +1,5 @@
 package chapter12;
 
-import chapter2.Scoreable;
-import chapter2.Weight;
-
 class Criterion implements Scoreable {
     private Weight weight;
     private Answer answer;
