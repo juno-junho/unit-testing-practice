@@ -1,4 +1,4 @@
-package chapter2;
+package chapter12;
 
 class Answer {
     private int i;

@@ -3,7 +3,7 @@ package chapter2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScoreCollection {
+class ScoreCollection {
     private List<Scoreable> scores = new ArrayList<>();
 
     public void add(Scoreable scoreable) {

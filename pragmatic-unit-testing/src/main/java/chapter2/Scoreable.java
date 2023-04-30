@@ -1,6 +1,6 @@
 package chapter2;
 
 @FunctionalInterface
-public interface Scoreable {
+interface Scoreable {
     int getScore();
 }

@@ -1,4 +1,6 @@
-package chapter2;
+package chapter12;
+
+import chapter2.Question;
 
 class BooleanQuestion extends Question {
     public BooleanQuestion(int id, String text) {
