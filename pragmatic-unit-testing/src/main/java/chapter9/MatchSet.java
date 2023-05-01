@@ -1,8 +1,7 @@
 package chapter9;
 
-import chapter2.Answer;
-import chapter2.Criteria;
-import chapter2.Criterion;
+import chapter13.Answer;
+import chapter13.Criteria;
 
 import java.util.Map;
 
