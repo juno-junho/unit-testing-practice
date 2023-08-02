@@ -15,5 +15,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      * 미래에 어떻게 변화될지 모른다
      */
     List<Product> findAllBySellingStatusIn(List<ProductSellingStatus> sellingStatuses);
+
+    List<Product> findAllByProductNumberIn(List<String> productNumbers);
 }
 
